@@ -1,0 +1,42 @@
+{
+  "displayName": "Coinhive",
+  "name": "coinhive",
+  "version": "1.0.0",
+  "description": "Monetize your business with your users' CPU power. Users mine cryptocurrency as an alternative to being bombarded with obtrusive ads.",
+  "author": {
+    "name": "Aaron Hardy"
+  },
+  "iconPath": "icon.svg",
+  "viewBasePath": "src/view/",
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {
+        "siteKey": {
+          "type": "string",
+          "length": 32
+        }
+      },
+      "required": [
+        "siteKey"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "actions": [
+    {
+      "displayName": "Start Mining",
+      "name": "start-mining",
+      "libPath": "src/lib/actions/startMining.js",
+      "schema": {}
+    },
+    {
+      "displayName": "Stop Mining",
+      "name": "stop-mining",
+      "libPath": "src/lib/actions/stopMining.js",
+      "schema": {}
+    }
+  ]
+}

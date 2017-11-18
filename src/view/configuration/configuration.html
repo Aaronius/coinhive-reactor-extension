@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Extension Configuration</title>
+
+    <link rel="stylesheet" href="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/css/coral.css">
+    <script>
+      window.Coral = window.Coral || {};
+      Coral.options = { typeKitId: 'buj6cmr'};
+    </script>
+
+    <script src="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/js/libs/jquery.js"></script>
+    <script src="//assets.adobedtm.com/activation/reactor/coralui/3.16.0/js/coral.js"></script>
+
+    <style>
+      body {
+        padding: 8px;
+      }
+
+      form {
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body class="coral--light">
+    <div>
+      <form class="coral-Form coral-Form--vertical">
+        <section class="coral-Form-fieldset">
+          <div class="coral-Form-fieldwrapper">
+            <label id="site-key-label" class="coral-Form-fieldlabel">Site Key</label>
+            <div class="coral-InputGroup coral-Form-field">
+              <input is="coral-textfield" name="siteKey" class="coral-InputGroup-input" labelledby="site-key-label">
+            </div>
+          </div>
+        </section>
+      </form>
+    </div>
+
+    <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+    <script>
+      var siteKeyInput = document.querySelector('input[name="siteKey"]');
+
+      window.extensionBridge.register({
+        init: function(info) {
+          if (info.settings) {
+            siteKeyInput.value = info.settings.siteKey;
+          }
+        },
+
+        getSettings: function() {
+          return {
+            siteKey: siteKeyInput.value
+          };
+        },
+
+        validate: function() {
+          var isValid = siteKeyInput.value.length === 32;
+          siteKeyInput.invalid = !isValid;
+          return isValid;
+        }
+      });
+    </script>
+  </body>
+</html>

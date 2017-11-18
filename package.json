@@ -1,0 +1,16 @@
+{
+  "name": "coinhive",
+  "version": "1.0.0",
+  "description": "Coinhive extension for Adobe Launch",
+  "author": "Aaron Hardy",
+  "license": "ISC",
+  "scripts": {
+    "sandbox": "reactor-sandbox",
+    "scaffold": "reactor-scaffold"
+  },
+  "devDependencies": {
+    "@adobe/reactor-sandbox": "^8.2.0",
+    "@adobe/reactor-scaffold": "^1.1.9",
+    "@adobe/reactor-turbine": "^23.1.0"
+  }
+}
