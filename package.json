@@ -6,9 +6,11 @@
   "license": "ISC",
   "scripts": {
     "sandbox": "reactor-sandbox",
-    "scaffold": "reactor-scaffold"
+    "scaffold": "reactor-scaffold",
+    "package": "reactor-packager"
   },
   "devDependencies": {
+    "@adobe/reactor-packager": "^2.6.0",
     "@adobe/reactor-sandbox": "^8.2.0",
     "@adobe/reactor-scaffold": "^1.1.9",
     "@adobe/reactor-turbine": "^23.1.0"
