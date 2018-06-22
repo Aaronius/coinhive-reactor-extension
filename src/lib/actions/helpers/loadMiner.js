@@ -1,6 +1,5 @@
 var loadScript = require('@adobe/reactor-load-script');
-var url = 'https://coinhive.com/lib/coinhive.min.js';
-
+var url = 'https://authedmine.com/lib/authedmine.min.js';
 var minerPromise;
 
 module.exports = function() {
